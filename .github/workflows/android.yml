@@ -1,0 +1,85 @@
+name: Android CI
+
+# Ne zaman çalışır:
+#  - main dalına her push'ta ve her pull request'te: APK derlenir, Actions sekmesine yüklenir.
+#  - "v" ile başlayan bir etiket push'landığında (ör. v1.0.0): ayrıca APK'lı bir GitHub Release oluşturulur.
+#  - Actions sekmesinden "Run workflow" ile elle.
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Aynı dal için yeni bir çalıştırma başlarsa eskisi iptal edilir.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: APK derle
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: JDK 17 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Android SDK kur
+        uses: android-actions/setup-android@v3
+
+      - name: Gradle kur (önbellek + wrapper doğrulama)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: gradlew'i çalıştırılabilir yap
+        run: chmod +x gradlew
+
+      - name: Debug ve release APK derle
+        run: ./gradlew assembleDebug assembleRelease --stacktrace
+
+      - name: APK dosyalarını adlandır
+        run: |
+          mkdir -p dist
+          VERSION="${GITHUB_REF_NAME//\//-}"
+          cp app/build/outputs/apk/debug/app-debug.apk     "dist/AndroTouch-${VERSION}-debug.apk"
+          cp app/build/outputs/apk/release/app-release.apk "dist/AndroTouch-${VERSION}-release.apk"
+          ls -la dist
+
+      - name: APK'ları Actions'a yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: AndroTouch-apk
+          path: dist/*.apk
+          retention-days: 30
+
+  release:
+    name: GitHub Release yayınla
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Derlenen APK'ları al
+        uses: actions/download-artifact@v4
+        with:
+          name: AndroTouch-apk
+          path: dist
+
+      - name: Release oluştur
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*-release.apk
+          generate_release_notes: true
