@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroTouch</string>
+    <string name="tagline">Ekranında her zaman elinin altında</string>
+
+    <string name="accessibility_description">AndroTouch, ekranda yüzen bir buton gösterir ve menüden seçtiğin geri, ana ekran, kilit, ekran görüntüsü gibi eylemleri senin yerine yapar. Ekrandaki içerikleri okumaz veya kaydetmez.</string>
+
+    <!-- Durum -->
+    <string name="section_status">Durum</string>
+    <string name="service_title">Erişilebilirlik servisi</string>
+    <string name="service_on">Açık — AndroTouch çalışıyor</string>
+    <string name="service_off">Kapalı — butonun görünmesi için aç</string>
+    <string name="service_open">Aç</string>
+    <string name="service_settings">Ayarlar</string>
+    <string name="show_button">Yüzen butonu göster</string>
+    <string name="restricted_hint">Ayar gri ve açılmıyorsa: Uygulama bilgisi → sağ üstteki ⋮ → “Kısıtlanmış ayarlara izin ver”.</string>
+    <string name="open_app_info">Uygulama bilgisini aç</string>
+
+    <string name="dialog_service_title">Erişilebilirliği aç</string>
+    <string name="dialog_service_message">AndroTouch’un butonu gösterebilmesi ve geri, ana ekran, kilit gibi tuşlara basabilmesi için erişilebilirlik servisi gerekiyor.\n\n1. Ayarlar → Erişilebilirlik → Yüklü uygulamalar\n2. AndroTouch → Aç\n\nAndroTouch ekrandaki içerikleri okumaz.</string>
+    <string name="dialog_go_settings">Ayarlara git</string>
+    <string name="dialog_cancel">Vazgeç</string>
+
+    <!-- Görünüm -->
+    <string name="section_style">Buton stili</string>
+    <string name="section_color">Renk</string>
+    <string name="section_size">Boyut</string>
+    <string name="section_opacity">Boştayken görünürlük</string>
+    <string name="opacity_hint">Butona birkaç saniye dokunmayınca bu kadar soluklaşır.</string>
+    <string name="size_value">%1$d dp</string>
+    <string name="opacity_value">%%%1$d</string>
+
+    <string name="style_rings">Halka</string>
+    <string name="style_square">Kare zemin</string>
+    <string name="style_thin_ring">İnce halka</string>
+    <string name="color_black">Siyah</string>
+    <string name="color_gray">Gri</string>
+    <string name="color_white">Beyaz</string>
+
+    <!-- Menü -->
+    <string name="section_menu">Menü</string>
+    <string name="menu_count">%1$d öğe</string>
+    <string name="edit_menu">Menüyü düzenle</string>
+    <string name="editor_title">Menüyü düzenle</string>
+    <string name="editor_info">Seçili: %1$d / %2$d · Sırayı değiştirmek için tutup sürükle</string>
+    <string name="editor_reset">Varsayılana dön</string>
+    <string name="editor_max">Menüye en fazla %1$d öğe eklenebilir</string>
+    <string name="editor_min">Menüde en az 1 öğe olmalı</string>
+    <string name="editor_preview">Önizleme</string>
+    <string name="editor_add_app">Uygulama ekle</string>
+    <string name="app_already">%1$s zaten menüde</string>
+    <string name="picker_title">Uygulama seç</string>
+    <string name="picker_search">Uygulama ara</string>
+    <string name="picker_empty">Uygulama bulunamadı</string>
+    <string name="picker_in_menu">Menüde</string>
+
+    <!-- Hareketler -->
+    <string name="section_gestures">Hareketler</string>
+    <string name="gesture_tap">Tek dokunuş</string>
+    <string name="gesture_double_tap">Çift dokunuş</string>
+    <string name="gesture_long_press">Uzun basma</string>
+    <string name="target_menu">Menüyü aç</string>
+    <string name="target_none">Hiçbir şey</string>
+    <string name="target_pick_app">Uygulama seç…</string>
+    <string name="target_selected">Seçili</string>
+    <string name="gestures_hint">Çift dokunuşa bir iş atanınca tek dokunuş, ikinci dokunuşu beklemek için çok kısa gecikir. Uzun basınca telefon titrer.</string>
+    <string name="gestures_no_menu">Hiçbir hareket menüyü açmıyor. Menüye ulaşmak için bir harekete “Menüyü aç” ata.</string>
+
+    <string name="privacy_note">AndroTouch internet kullanmaz, ekrandaki içerikleri okumaz ve hiçbir veri toplamaz.</string>
+
+    <!-- Eylemler -->
+    <string name="action_back">Geri</string>
+    <string name="action_home">Ana ekran</string>
+    <string name="action_recents">Son uygulamalar</string>
+    <string name="action_notifications">Bildirimler</string>
+    <string name="action_quick_settings">Hızlı ayarlar</string>
+    <string name="action_lock">Ekranı kilitle</string>
+    <string name="action_screenshot">Ekran görüntüsü</string>
+    <string name="action_power">Güç menüsü</string>
+    <string name="action_flashlight">Fener</string>
+    <string name="action_volume_up">Ses +</string>
+    <string name="action_volume_down">Ses −</string>
+    <string name="action_mute">Sessiz</string>
+    <string name="action_split">Bölünmüş ekran</string>
+    <string name="action_open_settings">AndroTouch</string>
+    <string name="action_failed">%1$s şu an yapılamadı</string>
+</resources>
