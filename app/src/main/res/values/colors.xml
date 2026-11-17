@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Uygulama içi: lacivert - beyaz -->
+    <color name="navy">#0F1F4B</color>
+    <color name="navy_dark">#0A1638</color>
+    <color name="navy_soft">#1B2C5C</color>
+    <color name="navy_accent">#7FA7FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="surface">#F4F6FB</color>
+    <color name="outline">#DCE2EF</color>
+    <color name="text_primary">#0F1F4B</color>
+    <color name="text_secondary">#5B6787</color>
+    <color name="status_on">#1E8E5A</color>
+    <color name="status_off">#C2412D</color>
+
+    <!-- Yüzen menü paneli -->
+    <color name="menu_panel">#EB0F1F4B</color>
+    <color name="menu_text">#FFFFFF</color>
+    <color name="menu_ripple">#33FFFFFF</color>
+
+    <color name="ic_launcher_background">#0F1F4B</color>
+</resources>

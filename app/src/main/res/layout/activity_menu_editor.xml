@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/navy"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/white"
+        app:title="@string/editor_title"
+        app:titleTextColor="@color/white" />
+
+    <!-- Menünün canlı önizlemesi -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="4dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="@string/editor_preview"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <GridLayout
+            android:id="@+id/previewGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_preview_panel"
+            android:backgroundTint="@color/navy_soft"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/info"
+        style="@style/AndroTouch.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="6dp"
+        tools:text="Seçili: 8 / 9 · Sırayı değiştirmek için tutup sürükle" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="88dp" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabAddApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:text="@string/editor_add_app"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/navy"
+            app:icon="@drawable/ic_add"
+            app:iconTint="@color/white" />
+    </FrameLayout>
+</LinearLayout>
